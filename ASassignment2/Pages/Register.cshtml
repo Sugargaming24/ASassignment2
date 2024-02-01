@@ -1,0 +1,135 @@
+﻿@page
+@model ASassignment2.Pages.RegisterModel
+@{
+}
+<div class="container mt-5">
+
+    <div class="row justify-content-center align-items-center">
+
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h1 class="mb-3">Register </h1>
+
+            <form method="post" asp-antiforgery="true">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="RModel.FullName">Full Name</label>
+                    <input type="text" asp-for="RModel.FullName" class="form-control" />
+                    <span asp-validaton-for="RModel.FullName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="RModel.Email">Email Address</label>
+                    <input type="email" asp-for="RModel.Email" class="form-control" />
+                    <span asp-validaton-for="RModel.Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="RModel.PhoneNumber">Phone Number</label>
+                    <input type="text" asp-for="RModel.PhoneNumber" class="form-control" />
+                    <span asp-validaton-for="RModel.PhoneNumber" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="RModel.CreditCard">Credit Card</label>
+                    <input type="text" asp-for="RModel.CreditCard" class="form-control" />
+                    <span asp-validaton-for="RModel.CreditCard" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="RModel.Gender">Gender</label>
+                    <input type="text" asp-for="RModel.Gender" class="form-control" />
+                    <span asp-validaton-for="RModel.Gender" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="RModel.Address">Address</label>
+                    <input type="text" asp-for="RModel.Address" class="form-control" />
+                    <span asp-validaton-for="RModel.Address" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="RModel.Password">Password</label>
+                    <input type="password" asp-for="RModel.Password" class="form-control"  />
+                    <span asp-validaton-for="RModel.Password" class="text-danger"></span>
+                    
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="RModel.ConfirmPassword">Confirm Password</label>
+                    <input type="password" asp-for="RModel.ConfirmPassword" class="form-control" />
+                    <span asp-validaton-for="RModel.ConfirmPassword"class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="RModel.Photo">Photo (.JPG Only)</label>
+                    <input type="file" asp-for="RModel.Photo" class="form-control" />
+                    <span asp-validaton-for="RModel.Photo" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label" asp-for="RModel.AboutMe">About Me</label>
+                    <input type="text" asp-for="RModel.AboutMe" class="form-control" />
+                    <span asp-validaton-for="RModel.AboutMe" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+@* 
+            @section Scripts{
+                <script type="text/javascript">
+                    function checkPasswordStrength() {
+                        var passwordInput = document.getElementById("RModel.Password");
+                        var strengthIndicator = document.getElementById("passwordStrength");
+                        var password = passwordInput.value;
+
+                        // Your password strength-checking logic
+                        var score = calculatePasswordStrength(password);
+
+                        // Display strength indicator based on the score
+                        var strengthText = "Password Strength: ";
+                        if (score < 3) {
+                            strengthText += "Weak";
+                        } else if (score < 4) {
+                            strengthText += "Medium";
+                        } else {
+                            strengthText += "Strong";
+                        }
+
+                        strengthIndicator.textContent = strengthText;
+                    }
+
+                    function calculatePasswordStrength(password) {
+                        int score = 0;
+                        //Score 0 very weak, length less than 12
+                        if (password.Length < 12) {
+                            return 1;
+                        }
+                        else {
+                            score = 1;
+                        }
+                        //Score 2 Weak, contain lowercase characters
+                        if (Regex.IsMatch(password, "[a-z]")) {
+                            score++;
+                        }
+                        //Score 3 Medium, contains uppercase characters
+                        if (Regex.IsMatch(password, "[A-Z]")) {
+                            score++;
+                        }
+                        //Score 4 Strong, contains numbers
+                        if (Regex.IsMatch(password, "[0-9]")) {
+                            score++;
+                        }
+                        //Score 5 Excellent, contains special characters
+                        if (Regex.IsMatch(password, "[!@@#$%^&*(),.?\":{}|<>]")) {
+                            score++;
+                        }
+
+                        return score;
+                    }
+                </script> *@
+            @* } *@
+
+        </div>
+    </div>
+</div>

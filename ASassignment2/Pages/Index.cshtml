@@ -1,0 +1,44 @@
+﻿
+@page
+@model IndexModel 
+@inject IHttpContextAccessor context;
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <ul>
+        <li>Full Name: @context.HttpContext.Session.GetString("FullName")</li>
+        <li>Credit Card: @context.HttpContext.Session.GetString("CreditCard")</li>
+        <li>Gender: @context.HttpContext.Session.GetString("Gender")</li>
+        <li>Phone Number: @context.HttpContext.Session.GetString("PhoneNumber")</li>
+        <li>Address: @context.HttpContext.Session.GetString("Address")</li>
+        <li>Email: @context.HttpContext.Session.GetString("Email")</li>
+        <li>About Me: @context.HttpContext.Session.GetString("AboutMe")</li>
+    </ul>
+</div>
+
+@* <div>
+    @functions {
+        public int divide(int x, int y)
+        {
+            string errormessage;
+            try
+            {
+                return x / y;
+            }
+            catch (DivideByZeroException d)
+            {
+                errormessage = d.ToString();
+                WriteLiteral("<br />Cannot Divide by Zero Exception found <br /><br />");
+                WriteLiteral("Additional Info <br /><br />" + errormessage);
+                return 0;
+            }
+        }
+    }
+    <h3>Division of 10 / 5 is @divide(10, 5)</h3>
+    <h3>Division of 10 / 0 is @divide(12, 0)</h3>
+
+</div> *@
+
